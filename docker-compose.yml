@@ -11,20 +11,21 @@ services:
         volumes:
             - ./:/var/www
         depends_on:
-            - apache
+            - nginx
         networks:
             - laravel
 
-    # Separate Apache service
-    apache:
-        image: httpd:alpine
+    # nginx
+    nginx:
+        image: nginx:alpine
         restart: unless-stopped
         ports:
             - "8000:80"
         volumes:
-            - ./:/var/www  # Mount app directory as Apache document root
+            - ./:/var/www
+            - ./docker/nginx/:/etc/nginx/conf.d/
         networks:
-            - laravel      
+            - laravel     
 
     # Use MariaDB instead of MySQL
     mariadb:
