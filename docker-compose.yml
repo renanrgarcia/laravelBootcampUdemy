@@ -22,8 +22,7 @@ services:
         ports:
             - "8000:80"
         volumes:
-            - ./docker/apache/conf.d:/etc/apache/conf.d/  # Optional: Mount custom Apache configurations
-            - app:/var/www/html  # Mount app directory as Apache document root
+            - ./:/var/www  # Mount app directory as Apache document root
         networks:
             - laravel      
 
