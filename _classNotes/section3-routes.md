@@ -19,3 +19,12 @@
 - The view return is in the `resources/views` folder
 - A different way to create a route is:
   - ```Route::verb('$uri', 'CONTROLLER', 'METHOD');```
+
+## Dependency Injection
+- You can use a class on the route function to inject dependencies
+  - Ex:
+  ```php
+  Route::get('/user', function (Request $request) {
+    return $request->user();
+  });
+  ```
