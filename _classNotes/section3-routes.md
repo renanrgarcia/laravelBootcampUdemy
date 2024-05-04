@@ -28,3 +28,9 @@
     return $request->user();
   });
   ```
+
+## Routes functions
+- return redirect('routeName'): global function
+- Route::redirect('routeName'): Route method
+
+

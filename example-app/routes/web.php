@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function (Request $request) {
+//     return redirect('/profile');
+// });
+// equals to:
+Route::redirect('/', '/profile');
+
+Route::get('/profile', function (Request $request) {
+    return "PROFILE";
 });
 
-Route::get('/user', 'CONTROLLER', 'METHOD');
+// Route::get('/user', 'CONTROLLER', 'METHOD');
