@@ -19,6 +19,7 @@
 - The view return is in the `resources/views` folder
 - A different way to create a route is:
   - ```Route::verb('$uri', 'CONTROLLER', 'METHOD');```
+- php artisan route:list: list all routes
 
 ## Dependency Injection
 - You can use a class on the route function to inject dependencies
@@ -30,7 +31,7 @@
   ```
 
 ## Routes functions
-- return redirect('routeName'): global function
-- Route::redirect('routeName'): Route method
-
-
+- return redirect('baseRouteName', 'routeName'): global function
+- Route::redirect('baseRouteName', 'routeName'): Route method
+- return view('viewName'): global function
+- Route::view('routeName', 'viewName'): Route method
