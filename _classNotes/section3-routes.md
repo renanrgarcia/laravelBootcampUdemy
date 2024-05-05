@@ -35,3 +35,9 @@
 - Route::redirect('baseRouteName', 'routeName'): Route method
 - return view('viewName'): global function
 - Route::view('routeName', 'viewName'): Route method
+
+## Route parameters
+- ```php
+  Route::get('/user/{id}', function ($id) {
+    return $id;
+  });```

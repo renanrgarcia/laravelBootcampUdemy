@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/{id}/{status}', function ($id, $status) {
+    return $id . "!" . $status;
+});
 
-Route::view('/', 'welcome');
+// Route::view('/', 'welcome');
 
 // // Route::get('/', function (Request $request) {
 // //     return redirect('/profile');
