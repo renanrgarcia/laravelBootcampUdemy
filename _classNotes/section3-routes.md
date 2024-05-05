@@ -41,3 +41,13 @@
   Route::get('/user/{id}', function ($id) {
     return $id;
   });```
+
+### Optional parameters
+- ```php
+  Route::get('/user/{id?}', function ($id = 1) {
+    return $id;
+  });```
+- ```php
+  Route::get('/user/{id?}', function ($id = null) {
+    return $id;
+  });```

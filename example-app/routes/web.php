@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/{id}/{status}', function ($id, $status) {
-    return $id . "!" . $status;
+Route::get('/{id?}', function ($id = 1) {
+    return $id;
 });
 
 // Route::view('/', 'welcome');
