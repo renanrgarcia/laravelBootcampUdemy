@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\CalculateCode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,29 +16,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// Route::get('/user/{id}', function ($id) {
-//     return $id;
-// })->where('id', '[0-9]+');
+Route::get('/', function () {
+    return view('welcome');
+})->middleware('cal');
 
-// Route::get('/user/{name}', function ($name) {
-//     return $name;
-// })->where('name', '[A-Za-z]+');
+// Route::get('/', function (){
+//     return view('welcome');
+// })->name('home');
 
-// Route::get('/user/{name}/{id}', function (string $name, int $id) {
-//     return $name . ' ' . $id;
-// })->where(['name' => '[A-Za-z]+', 'id' => '[0-9]+']);
+// Route::get('/company-contact', function () {
+//     return 'contact';
+// })->name('contact');
 
-Route::get('/user/{categories}', function ($categories) {
-    return $categories;
-})->whereIn('categories', ['a', 'b', 'c']);
-
-
-// Route::view('/', 'welcome');
-
-// // Route::get('/', function (Request $request) {
-// //     return redirect('/profile');
-// // });
-// // equals to:
-// Route::redirect('/', '/profile');
-
-// Route::get('/user', 'CONTROLLER', 'METHOD');
+// Route::get('/profile', function () {
+//     return 'profile';
+// })->name('profile');

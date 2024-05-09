@@ -65,3 +65,11 @@
   - ->whereAlphaNumeric(): Only letters and numbers
   - ->whereIn('list', ['item1', 'item2']): Only in a list
   - ->whereDate(): Only dates
+
+## Named routes
+- Example:
+  ```php
+  Route::get('/user/{id}', function ($id) {
+    return $id;
+  })->name('user');
+  ```
