@@ -15,9 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/{id?}', function ($id = 1) {
-    return $id;
-});
+// Route::get('/user/{id}', function ($id) {
+//     return $id;
+// })->where('id', '[0-9]+');
+
+// Route::get('/user/{name}', function ($name) {
+//     return $name;
+// })->where('name', '[A-Za-z]+');
+
+// Route::get('/user/{name}/{id}', function (string $name, int $id) {
+//     return $name . ' ' . $id;
+// })->where(['name' => '[A-Za-z]+', 'id' => '[0-9]+']);
+
+Route::get('/user/{categories}', function ($categories) {
+    return $categories;
+})->whereIn('categories', ['a', 'b', 'c']);
+
 
 // Route::view('/', 'welcome');
 

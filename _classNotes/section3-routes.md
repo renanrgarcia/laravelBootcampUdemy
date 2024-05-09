@@ -51,3 +51,17 @@
   Route::get('/user/{id?}', function ($id = null) {
     return $id;
   });```
+
+## Regular Expressions
+- Example:
+  ```php
+  Route::get('/user/{id}', function ($id) {
+    return $id;
+  })->where('id', 'regularExpression');
+  ```
+- Laravel facilitates:
+  - ->whereAlpha(): Only letters
+  - ->whereNumber(): Only numbers
+  - ->whereAlphaNumeric(): Only letters and numbers
+  - ->whereIn('list', ['item1', 'item2']): Only in a list
+  - ->whereDate(): Only dates
