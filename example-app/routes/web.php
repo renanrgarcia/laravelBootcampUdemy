@@ -15,19 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', function () {
+Route::get('/', function (){
     return view('welcome');
-})->middleware('cal');
+});
 
-// Route::get('/', function (){
-//     return view('welcome');
-// })->name('home');
+Route::get('/profile', function () {
+    return 'profile';
+});
 
-// Route::get('/company-contact', function () {
-//     return 'contact';
-// })->name('contact');
-
-// Route::get('/profile', function () {
-//     return 'profile';
-// })->name('profile');
+Route::get('/dashboard', function () {
+    return 'dashboard';
+});

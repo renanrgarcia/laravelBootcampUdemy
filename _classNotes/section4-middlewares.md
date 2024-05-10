@@ -15,3 +15,7 @@
 ## Middleware alias
 - On `app/Http/Kernel.php`, you can see the aliases on `middlewareAliases` property
 - You can add one to your own middleware
+
+## Global register
+- On `app/Http/Kernel.php`, you can see the global middleware on `$middlewareGroups` property
+  - You can add other global middleware to your `middlewareGroups`, it will affect all the specified routes
