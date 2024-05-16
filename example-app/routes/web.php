@@ -15,14 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function (){
-    return view('welcome');
+Route::get('/', function (Request $request) {
+
+    $token = $request->session()->token();
+
+    return $token;
 });
 
-Route::get('/profile', function () {
-    return 'profile';
-});
-
-Route::get('/dashboard', function () {
-    return 'dashboard';
+Route::get('/posts', function () {
+    return 'It works!';
 });
