@@ -7,12 +7,13 @@
 
         <title>CSRF</title>
     </head>
-    <body >
+    <body>
         <form action="/posts" method="post">
-            <input type="hidden" value="">
+            @csrf
+            {{-- {{ csrf_field() }} --}}
             <label for="email">Email</label>
             <input type="email" name="email" id="email">
-            <input type="submit" value="Submit">
+            <input type="submit">
         </form>
 
         <script>
