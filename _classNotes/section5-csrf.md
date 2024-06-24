@@ -7,7 +7,11 @@
 ## CSRF on backend
 - On the route:
   - ```php
-      $token = $request->session()->token();
-      return $token;
-      ```
-  - Or `return csrf_token();`
+      Route::get('/token', function (Request $request) {
+        $token = $request->session()->token();
+        return $token;
+      });
+  ```
+- Or `return csrf_token();`
+
+## CSRF with AJAX

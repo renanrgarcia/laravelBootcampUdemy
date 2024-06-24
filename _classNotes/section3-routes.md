@@ -31,7 +31,7 @@
   ```
 
 ## Routes functions
-- return redirect('baseRouteName', 'routeName'): global function
+- return redirect('routeName'): global function
 - Route::redirect('baseRouteName', 'routeName'): Route method
 - return view('viewName'): global function
 - Route::view('routeName', 'viewName'): Route method
@@ -40,17 +40,20 @@
 - ```php
   Route::get('/user/{id}', function ($id) {
     return $id;
-  });```
+  });
+  ```
 
 ### Optional parameters
 - ```php
   Route::get('/user/{id?}', function ($id = 1) {
     return $id;
-  });```
+  });
+  ```
 - ```php
   Route::get('/user/{id?}', function ($id = null) {
     return $id;
-  });```
+  });
+  ```
 
 ## Regular Expressions
 - Example:
