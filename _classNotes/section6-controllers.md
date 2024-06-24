@@ -1,0 +1,19 @@
+# Controllers
+- Syntax: `Route::verb('$uri', 'CONTROLLER', 'METHOD');`
+- Located at `app/Http/Controllers`
+
+## Editing the Controller
+- Give a namespace to the controller: `namespace App\Http\Controllers;`
+- Create a new class: `class MyController extends Controller {}`
+- Create the first method: `public function index() { return view('welcome'); }`
+
+## Creating Controllers with artisan
+- `php artisan make:controller MyController --resource`
+  - Resource: adds methods `index`, `create`, `store`, `show`, `edit`, `update`, `destroy`
+
+## Apply middleware to controllers
+- `public function __construct() { }`: used when instantiating a class
+  - Used to apply middleware to the controller, for example: 
+    - `public function __construct() { $this->middleware('auth'); }`
+- You can also apply into the Route, for example:
+  - `Route::get('/', [UserController::class, 'show'])->middleware('auth');`

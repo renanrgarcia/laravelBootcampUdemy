@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\CalculateCode;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,10 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome-base');
-});
+// Route::get('/', [PostsController::class, 'index']);
 
-Route::get('/posts', function () {
-    return 'It works!';
-});
+Route::get('/', [UserController::class, 'show'])->middleware('auth');
