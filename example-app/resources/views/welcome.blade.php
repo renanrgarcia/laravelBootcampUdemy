@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    PROFILE
+    CATEGORIES
 </body> 
 </html>

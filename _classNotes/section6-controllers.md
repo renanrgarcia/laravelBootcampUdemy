@@ -17,3 +17,8 @@
     - `public function __construct() { $this->middleware('auth'); }`
 - You can also apply into the Route, for example:
   - `Route::get('/', [UserController::class, 'show'])->middleware('auth');`
+
+## Resource Controllers
+- Create the route: `Route::resource('users', UserController::class);`
+  - It will create the routes `users.index`, `users.create`, `users.store`, `users.show`, `users.edit`, `users.update`, `users.destroy`
+  - For example the URI: `/users/create` 

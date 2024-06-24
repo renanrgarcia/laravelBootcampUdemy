@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\CalculateCode;
@@ -20,4 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', [PostsController::class, 'index']);
 
-Route::get('/', [UserController::class, 'show'])->middleware('auth');
+// Route::get('/', [UserController::class, 'show'])->middleware('auth');
+
+Route::resource('categories', CategoriesController::class);
