@@ -35,7 +35,7 @@ class CategoriesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return "Category #" . $id;
     }
 
     /**

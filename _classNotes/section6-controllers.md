@@ -24,6 +24,8 @@
   - For example the URI: `/users/create` 
 
 ### Store method
-- It's a POST request
+- It's a POST request. Creates a new resource. Example: `users/create`
 - Can be used to create a new resource by submitting an entity to the server. Example: forms
 
+### Show method
+- It's a GET request. Shows a resource. Example: `users/{id}`

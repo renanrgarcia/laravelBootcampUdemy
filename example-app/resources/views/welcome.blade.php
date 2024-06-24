@@ -14,5 +14,11 @@
         @csrf
         <button type="submit">Submit</button>
     </form>
+
+    <hr>
+
+    <h2>Categories Show Method</h2>
+
+    <a href="/categories/1">Show Category</a>
 </body> 
 </html>
