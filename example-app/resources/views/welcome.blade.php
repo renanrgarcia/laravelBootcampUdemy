@@ -20,5 +20,22 @@
     <h2>Categories Show Method</h2>
 
     <a href="/categories/1">Show Category</a>
+
+    <hr>
+
+    <h2>Categories Edit Method</h2>
+
+    <a href="/categories/1/edit">Show Category</a>
+
+    <hr>
+
+    <h2>Categories Update Method with Put or Patch</h2>
+
+    <form action="/categories/1" method="post">
+        @csrf
+        <input type="hidden" name="_method" value="patch">
+        <button type="submit">Put or Patch Update</button>
+    </form>
+
 </body> 
 </html>

@@ -29,3 +29,11 @@
 
 ### Show method
 - It's a GET request. Shows a resource. Example: `users/{id}`
+- Can be used to show a resource with a link. Example: <a href="/categories/1">Show Category 1</a>
+
+### Edit method
+- It's a GET request. Edits a resource. Example: `users/{id}/edit`
+
+### Update method
+- It's a PUT/PATCH request. Updates a resource. Example: `users/{id}`
+

@@ -43,7 +43,7 @@ class CategoriesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return "Category #" . $id . " is being edited";
     }
 
     /**
@@ -51,7 +51,7 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        return "Category #" . $id . " is being updated with PUT or PATCH";
     }
 
     /**
