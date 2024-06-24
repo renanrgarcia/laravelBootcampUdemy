@@ -7,5 +7,12 @@
 </head>
 <body>
     CATEGORIES
+
+    <h2>Categories Store Method</h2>
+
+    <form action="/categories" method="post">
+        @csrf
+        <button type="submit">Submit</button>
+    </form>
 </body> 
 </html>

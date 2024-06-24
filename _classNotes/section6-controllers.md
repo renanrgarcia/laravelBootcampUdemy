@@ -22,3 +22,8 @@
 - Create the route: `Route::resource('users', UserController::class);`
   - It will create the routes `users.index`, `users.create`, `users.store`, `users.show`, `users.edit`, `users.update`, `users.destroy`
   - For example the URI: `/users/create` 
+
+### Store method
+- It's a POST request
+- Can be used to create a new resource by submitting an entity to the server. Example: forms
+

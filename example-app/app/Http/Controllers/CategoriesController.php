@@ -27,7 +27,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return "STORE METHOD";
     }
 
     /**
