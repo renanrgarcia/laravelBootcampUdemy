@@ -37,3 +37,8 @@
 ### Update method
 - It's a PUT/PATCH request. Updates a resource. Example: `users/{id}`
 
+### Destroy method
+- It's a DELETE request. Deletes a resource. Example: `users/{id}`
+
+## @Method
+- It's a method that can be used on the controller. Example: `@method('PUT')`

@@ -59,6 +59,6 @@ class CategoriesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return "Category #" . $id . " is being deleted";
     }
 }

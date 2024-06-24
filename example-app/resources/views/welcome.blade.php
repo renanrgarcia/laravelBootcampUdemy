@@ -35,6 +35,17 @@
         @csrf
         <input type="hidden" name="_method" value="patch">
         <button type="submit">Put or Patch Update</button>
+    </form>]
+    
+    <hr>
+
+    <h2>Categories Delete Method</h2>
+
+    <form action="/categories/1" method="post">
+        @csrf
+        @method('delete')
+        <!-- <input type="hidden" name="_method" value="delete"> -->
+        <button type="submit">Delte Method</button>
     </form>
 
 </body> 
