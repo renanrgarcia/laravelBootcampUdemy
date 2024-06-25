@@ -22,6 +22,7 @@
 - Create the route: `Route::resource('users', UserController::class);`
   - It will create the routes `users.index`, `users.create`, `users.store`, `users.show`, `users.edit`, `users.update`, `users.destroy`
   - For example the URI: `/users/create` 
+- Resources are predefined methods that can be used on the controller.
 
 ### Store method
 - It's a POST request. Creates a new resource. Example: `users/create`
@@ -42,3 +43,67 @@
 
 ## @Method
 - It's a method that can be used on the controller. Example: `@method('PUT')`
+
+## Organizing Controllers
+- Example:
+  ```php
+  Route::resources([
+    'users' => UserController::class,
+    'categories' => CategoryController::class
+  ])
+  ```
+
+## Using specific resources
+- You can specify on the route what resources can be used.
+  - Example: 
+    ```php
+    Route::resource('users', UserController::class)->only(['index', 'show']);
+    ```
+- You can specify on the route what resources can not be used.
+  - Example:
+    ```php
+    Route::resource('users', UserController::class)->except(['create', 'store']);
+    ```
+
+## API Resources
+- When you use the `apiResource` method, it excludes `create` and `edit` methods.
+  - Example:
+    ```php
+    Route::apiResource('users', UserController::class);
+    ```
+
+## Change the route resource methods names
+- You can change the route methods names for the resource.
+  - Example:
+    ```php
+    Route::Resource('users', UserController::class)->names([
+      'destroy' => 'users.delete',
+    ]);
+    ```
+
+## Naming resource route parameters
+- You can change the route parameters names for the resource.
+  - Example:
+    ```php
+    Route::Resource('users', UserController::class)->parameters([
+      'users' => 'user_id'
+    ]);
+    ```
+
+## Adjust Resource URIs
+- You can change the route URI for the resource.
+  - Example (On RouteServiceProvider.php):
+    ```php
+    Route::resourceVerbs([
+      'create' => 'criar',
+      'edit' => 'editar'
+    ]);
+    ```
+
+## Suplement resource with another methods
+- You can add new methods to the resource.
+  - Example (Inside the Controller):
+    ```php
+    public function new_method() {
+      return view('new_method');
+    }

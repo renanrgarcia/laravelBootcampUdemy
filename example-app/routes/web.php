@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\PhotosController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\CalculateCode;
@@ -23,4 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', [UserController::class, 'show'])->middleware('auth');
 
-Route::resource('categories', CategoriesController::class);
+Route::resources([
+  'categories' => CategoriesController::class,
+  'photos' => PhotosController::class
+]);

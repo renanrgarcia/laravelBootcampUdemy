@@ -48,5 +48,9 @@
         <button type="submit">Delte Method</button>
     </form>
 
+    <hr>
+
+    <a href="/photos">PHOTOS</a>
+
 </body> 
 </html>
