@@ -25,3 +25,6 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', [UserController::class, 'show'])->middleware('auth');
 
 Route::get('/', [PostsController::class, 'index']);
+
+Route::patch('/posts/{id}', [PostsController::class, 'update']);
+Route::get('/posts/path', [PostsController::class, 'the_path'])->name('posts.path');
