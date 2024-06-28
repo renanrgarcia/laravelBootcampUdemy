@@ -1,0 +1,17 @@
+# Requests inputs
+- `$request->all()`: Returns an array of all the inputs in the request by query string.
+- `$request->collect()`: Returns a collection of all the inputs in the request by query string. Functions as a wrapper for `$request->all()`.
+  - Uses examples for its methods:
+    - `$request->collect()->count()`: Returns the number of inputs in the request.
+    - `$request->collect()->get('name')`: Returns the value of the input with the name `name`.
+- `$request->input()`: Returns an array of all the inputs in the request by query string. Used in forms too.
+  - You can access one item from an array: `$request->input('list.0')`.
+  - You can access one item from a query string: `$request->input('name', 'defaultValue')`. = `$request->query('name', 'defaultValue')`.
+- Carbon class: `$request->date()`: Returns a Carbon object for the date in the request.
+- `$request->only('name', 'email')`: Returns an array of only the specified inputs in the request.
+- `$request->except('name', 'email')`: Returns an array of all the inputs in the request except the specified inputs.
+- `$request->has('name')`: Returns true if the request has the specified input. Tip: put `required` on the input in the form, if that's the case.
+- `$request->hasAny('name', 'email')`: Returns true if the request has any of the specified inputs.
+- `$request->missing('name')`: Returns true if the key is missing from the request.
+- `$request->merge(['name' => 'John Doe'])`: Returns an array of all the inputs in the request with the specified input added in the array. Override existing values.
+- `$request->mergeIfMissing('name', 'John Doe')`: Returns an array of all the inputs in the request with the specified input added in the array if the key is missing from the request.

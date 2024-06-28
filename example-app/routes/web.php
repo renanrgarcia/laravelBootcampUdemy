@@ -24,7 +24,70 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', [UserController::class, 'show'])->middleware('auth');
 
-Route::get('/', [PostsController::class, 'index']);
+// Route::get('/', function (Request $request) {
+//   $data = $request->all();
 
-Route::patch('/posts/{id}', [PostsController::class, 'update']);
-Route::get('/posts/path', [PostsController::class, 'the_path'])->name('posts.path');
+//   return dd($data);
+// });
+
+// Route::get('/', function (Request $request) {
+//   $data = $request->collect();
+
+//   return $data->get('name');
+// });
+
+// Route::get('/', function (Request $request) {
+//   $data = $request->input();
+
+//   return $data;
+// });
+
+// Route::get('/', function (Request $request) {
+//   return view('welcome');
+// });
+
+// Route::post('/colors', function (Request $request) {
+//   return dd($request->input('colors.0'));
+// });
+
+// Route::get('/custom', function (Request $request) {
+//   return dd($request->input('name'));
+// });
+
+Route::get('/', function () {
+  return view('welcome');
+});
+
+Route::post('/date', function(Request $request) {
+  // $obj = $request->date('appointment', 'Y-m-d', 'America/New_York');
+  // $obj = $request->date('appointment');
+
+  return $request->appointment;
+});
+
+Route::post('/custom', function(Request $request) {
+  // $inputs = $request->only(['email', 'checkBox']);
+  // $inputs = $request->except('email');
+
+  // dd($inputs);
+  
+  // if ($request->has('email', 'checkBox')) {
+  //   return 'Has email and checkBox';
+
+  if ($request->hasAny('email', 'checkBox')) {
+    return 'Has email or checkBox';
+  }
+});
+
+Route::get('/data', function(Request $request) {
+  // if ($request->hasAny('email', 'checkBox')) {
+  //   return 'Has email or checkBox';
+  // }
+
+  // if ($request->missing('email')) {
+  //   return 'Missing email';
+  // }
+
+  
+
+});
