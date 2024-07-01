@@ -20,16 +20,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function (Request $request) {
-  return view('welcome');
+Route::get('/', function () {
+  // return view('welcome');
+
+  // return response('Hello World', 200)
+  //   ->header('Header 1', 'This is header 1')
+  //   ->header('Header 2', 'This is header 2');
+
+  // return response('Hello World', 200)->withHeaders([
+  //   'Content-Type' => 'text/plain',
+  //   'Header 1' => 'This is header 1',
+  //   'Header 2' => 'This is header 2',
+  // ]);
+
 });
 
-// Route::post('/flash', function (Request $request) {
-//   $request->flashOnly('username');
-//   $request->flashExcept('email');
-//   return "Flash";
-// });
+Route::middleware('cache.headers:private;no_cache')->group(function () {
 
-Route::post('/flash', function (Request $request) {
-  return redirect('/')->withInput();
+  Route::get('/dashboard', function () {
+    // return 'DASHBOARD';
+    $user = 'Renan Garcia';
+    $cookie = cookie('user', $user, 1);
+    return response('User Data');
+  });
+
+  Route::get('/posts', function (Request $request) {
+    $cookie = cookie('visit', 1, 30);
+    return response('Posts')->cookie($cookie);
+    // return 'Welcome to your post ' . $request->cookie('user');
+  });
+
 });
