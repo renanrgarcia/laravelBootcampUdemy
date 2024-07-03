@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PhotosController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UserController;
@@ -8,6 +9,7 @@ use App\Http\Middleware\CalculateCode;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,34 +22,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//   return view('welcome');
+// })->name('home');
+
+// Route::get('/login', function () {
+//   return redirect()->route('home');
+// });
+
+// Route::get('/data', function (Request $request) {
+//   return $request->query('id');
+// })->name('data');
+
+// Route::get('/dashboard', function (Request $request) {
+//   return redirect()->route('data', ['id' => 5]);
+// });
+
+// Route::get('/', function () {
+//   return redirect()->action([DashboardController::class, 'index'], ['id' => 5]);
+// });
+
 Route::get('/', function () {
-  // return view('welcome');
-
-  // return response('Hello World', 200)
-  //   ->header('Header 1', 'This is header 1')
-  //   ->header('Header 2', 'This is header 2');
-
-  // return response('Hello World', 200)->withHeaders([
-  //   'Content-Type' => 'text/plain',
-  //   'Header 1' => 'This is header 1',
-  //   'Header 2' => 'This is header 2',
-  // ]);
-
+  return view('welcome');
 });
 
-Route::middleware('cache.headers:private;no_cache')->group(function () {
+// Route::get('/dashboard', [DashboardController::class, 'show']);
 
-  Route::get('/dashboard', function () {
-    // return 'DASHBOARD';
-    $user = 'Renan Garcia';
-    $cookie = cookie('user', $user, 1);
-    return response('User Data');
-  });
-
-  Route::get('/posts', function (Request $request) {
-    $cookie = cookie('visit', 1, 30);
-    return response('Posts')->cookie($cookie);
-    // return 'Welcome to your post ' . $request->cookie('user');
-  });
-
+Route::get('/json', function () {
+  return response()->json([
+    'name' => 'Renan Garcia',
+    'role' => 'admin'
+  ]);
 });
