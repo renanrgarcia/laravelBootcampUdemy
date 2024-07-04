@@ -15,10 +15,10 @@ use Illuminate\Support\ServiceProvider;
 //     }
 // }
 
-class AppServiceProvider extends ServiceProvider
+class UserDataCustom extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Register services.
      */
     public function register(): void
     {
@@ -26,10 +26,14 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      */
     public function boot(): void
     {
+        // view()->composer(['profile', 'dashboard'], function ($view) {
+        //     $view->with('user', new User('Renan Garcia', 'r@r.com'));
+        // });
+
         // $user = new User('John Doe', 'j@j.com');
 
         // View::share(['user' => $user]);
