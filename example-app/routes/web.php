@@ -22,10 +22,10 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', function () {
-  return view('welcome', [
-    'username' => 'RenanGarcia', 
-    'count' => 20,
-    'status' => 'active'
-  ]);
+  return view('welcome');
+});
+
+Route::get('/profile', function () {
+  return view('profile');
 });
 

@@ -1,0 +1,15 @@
+# Blade - Components
+## Master layout
+- Create a master.blade.php at resources/views/layouts
+- On master.blade.php put a `@yield('content')` tag to create a space for the content on child views
+- Use on child views: `@extends('layouts.master')` to get the master layout and `@section('content') ... @endsection` to put the specific content in.
+
+## Anonymous components
+- Create a component at resources/views/Components
+- Use on child views: <x-component-name> </x-component-name>
+- To add content you can: <x-component-name content="content goes here"> ... </x-component-name> 
+- Or you can add a content with a distinct variable:
+  <x-component-name> <x-slot name="content"> Content goes here </x-slot>  </x-component-name>
+  - You must add `{{ $content }}`in the master layout
+- Another way: <x-component-name> Content goes here </x-component-name>
+  - You must add `{{ $slot }}`in the master layout

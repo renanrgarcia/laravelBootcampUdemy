@@ -1,6 +1,11 @@
-<h1>Profile</h1>
+{{-- @extends('layouts.master')
 
-{{ $user->name }}
-<br>
-{{ $user->email }}
-<br>
+@section('content')
+    <h1>Profile</h1>
+@endsection --}}
+
+<x-master>
+  <x-slot name="content">
+    <h1>Profile</h1>
+  </x-slot>
+</x-master>
