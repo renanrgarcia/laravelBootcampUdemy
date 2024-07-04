@@ -49,4 +49,5 @@
 ## Optimize Views
 - Laravel compile the views on storage/framework/views and store it on memory
 - You can pre-compile the views with `php artisan view:cache`
+- You can clear the cache with `php artisan view:clear`
 - You can test the time by `{{microtime(true) - LARAVEL_START}}` on some view

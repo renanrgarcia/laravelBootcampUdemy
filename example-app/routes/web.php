@@ -22,26 +22,10 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', function () {
-  return view('welcome');
+  return view('welcome', [
+    'username' => 'RenanGarcia', 
+    'count' => 20,
+    'status' => 'active'
+  ]);
 });
 
-// class User {
-//   public $name;
-//   public $email;
-
-//   public function __construct($name, $email) {
-//     $this->name = $name;
-//     $this->email = $email;
-//   }
-// }
-
-
-Route::get('/profile', function () {
-//   $user = new User('John Doe', 'j@j.com');
-//   return view('profile', compact('user'))->with('status', 'success')->with('code', 200);
-  return view('profile');
-});
-
-// Route::view('/dashboard', 'dashboard');
-
-Route::view('/dashboard', 'dashboard');
