@@ -4,8 +4,8 @@
     <h1>Profile</h1>
 @endsection --}}
 
-<x-master>
-  <x-slot name="content">
-    <h1>Profile</h1>
-  </x-slot>
-</x-master>
+<x-app-layout>
+
+  APP LAYOUT
+
+</x-app-layout>

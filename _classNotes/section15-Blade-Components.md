@@ -13,3 +13,13 @@
   - You must add `{{ $content }}`in the master layout
 - Another way: <x-component-name> Content goes here </x-component-name>
   - You must add `{{ $slot }}`in the master layout
+
+
+## Class Based Components
+- You can create a basic component: `php artisan make:component MyComponent --view`
+  - It create a empty component at `resources/views/Components`
+- To create a class based component: `php artisan make:component MyComponent`
+  - It create a empty component at `resources/views/Components` and a class  at `app/View/Components`
+- You can create properties in the class and use it on the views:
+  - In the master component: `<x-MyComponent title="My title"> ... </x-MyComponent>`
+  - In the child view: `{{ $title }}`
