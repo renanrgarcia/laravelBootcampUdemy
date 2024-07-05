@@ -23,3 +23,8 @@
 - You can create properties in the class and use it on the views:
   - In the master component: `<x-MyComponent title="My title"> ... </x-MyComponent>`
   - In the child view: `{{ $title }}`
+
+## Passing data to Class Based Components
+- In the route: `Route::get('/', function () { $data = someData; return view('welcome', compact('data'));`  
+  - In the view: `<x-MyComponent :data="$data"> ... </x-MyComponent>` > using the colon to pass the data
+  - In the component: `<button data="{{ $data }}"> ... </button>`

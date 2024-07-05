@@ -22,7 +22,9 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', function () {
-  return view('welcome');
+  $type = 'submit';
+  
+  return view('welcome', compact('type'));
 });
 
 Route::get('/profile', function () {
