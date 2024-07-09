@@ -1,11 +1,5 @@
-{{-- @extends('layouts.master')
+@props(['master' => 'I am a master'])
 
-@section('content')
-    <h1>Profile</h1>
-@endsection --}}
-
-<x-app-layout>
-
-  APP LAYOUT
-
-</x-app-layout>
+<x-master>
+  {{$master}}
+</x-master>

@@ -27,7 +27,5 @@ Route::get('/', function () {
   return view('welcome', compact('type'));
 });
 
-Route::get('/profile', function () {
-  return view('profile');
-});
+Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
 

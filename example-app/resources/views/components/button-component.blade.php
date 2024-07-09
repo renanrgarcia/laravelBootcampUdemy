@@ -1,1 +1,8 @@
-<button type="submit">Submit</button>
+<button 
+
+{{$attributes->class('up left') }}
+
+type="{{$type}}
+
+
+">Save</button>

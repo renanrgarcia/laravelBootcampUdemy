@@ -5,7 +5,7 @@
   class PostsController extends Controller {
 
     public function index(Request $request) {
-      return view ('welcome');
+      return view ('posts.index');
     }
 
     public function update(Request $request, string $id) {
