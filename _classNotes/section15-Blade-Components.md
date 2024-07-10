@@ -64,4 +64,13 @@
   ```php
   {{ $myMethod($param1) }}
   ```
-  
+
+## Component data
+- You can see the component data adding this function on MyComponent.php:
+  ```php
+  public function render() {
+    return function ($data) {
+      dd($data);
+    };
+  }
+  ```
