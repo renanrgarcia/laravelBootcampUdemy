@@ -74,3 +74,15 @@
     };
   }
   ```
+
+## Inline Components
+- Create with `php artisan make:component MyComponent --inline`
+- Tou can render the component in other view: `<x-component-name> ... </x-component-name>`
+- The component uses helitox sintax: `<<<'blade' ... blade;`
+  - You can assign it to a property: `$this->message = <<<'blade' ... blade;`
+  - You can use {{$slot}} in the helitox sintax and add the content in the view
+
+## Dynamic components
+- In the view: `<x-dynamic-component :component="$componentName"> ... </x-dynamic-component>`
+  - You can have more than one component, depending on $componentName value
+  - It can be defined by the controller, for example

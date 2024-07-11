@@ -3,7 +3,7 @@
 @section('content')
     <h1>Welcome</h1>
 
-    {{-- <x-button-component type="submit"></x-button-component> --}}
+    <x-link>Live as if you were to die tomorrow. Learn as if you were to live forever. - Mahatma Gandhi</x-link>
 
-    <x-modal-component></x-modal-component>
+    
 @endsection

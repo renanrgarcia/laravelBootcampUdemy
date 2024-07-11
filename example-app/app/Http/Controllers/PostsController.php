@@ -5,7 +5,16 @@
   class PostsController extends Controller {
 
     public function index(Request $request) {
-      return view ('posts.index');
+      $recordCreated = true;
+      $componentName = null;
+      
+      if ($recordCreated) {
+        $componentName = 'success';
+      } else {
+        $componentName = 'error';
+      }
+      
+      return view ('posts.index', compact('componentName'));
     }
 
     public function update(Request $request, string $id) {

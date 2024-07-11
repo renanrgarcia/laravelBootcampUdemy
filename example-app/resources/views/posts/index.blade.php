@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-  <x-modal-component buttonColor="danger" modalColor="danger" modalType="danger">
+  {{-- <x-modal-component buttonColor="danger" modalColor="danger" modalType="danger">
     <x-slot name="buttonText">
       Optin
     </x-slot>
@@ -10,5 +10,7 @@
     <x-slot name="buttonText">
       Close
     </x-slot>
-  </x-modal-component>
+  </x-modal-component> --}}
+
+  <x-dynamic-component :component="$componentName"></x-dynamic-component>
 @endsection
