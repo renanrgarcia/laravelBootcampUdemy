@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PhotosController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\CalculateCode;
 use Illuminate\Http\Request;
@@ -21,11 +22,18 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::get('/', function () {
-  $type = 'submit';
-  
-  return view('welcome', compact('type'));
+Route::get('/', function (Request $request) {
+  // $request->session(['secret' => 'test']);
+
+  session(['secret' => 'test']);
+
+  return view('welcome');
 });
 
-Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
-
+Route::prefix('sessions')
+  ->controller(SessionsController::class)
+  ->group(function () {
+    Route::get('/', 'index');
+    Route::get('/set', 'set');
+    Route::get('/delete', 'delete');
+  });
